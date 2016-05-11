@@ -28,35 +28,34 @@ function TreeFilter(identifier) {
      * @returns {tree}
      */
     function arrayTreeFilter(tree, filterFn) {
-        treeIterator(tree, function (node, parent) {
-            if (!filterFn(node)) {
+        return treeIterator(tree, function (node, parent) {
+            if (!filterFn(node, parent)) {
 
                 var index = 0;
+
                 if(parent.children) {
                     parent.children.forEach(function children(child) {
 
                         if (child[identifier] === node[identifier]) {
 
-                            delete parent.children[index];
+                            parent.children.splice(index, 1);
 
-                            parent.children = parent.children.filter(function (child) {
-                                return child == null ? false : true;
-                            });
-
-                            if (parent.children.length === 0) {
-                                delete parent.children;
-                            }
                         }
-                        index++;
+                        ++index;
+
                     });
+
+                    if (parent.children.length === 0) {
+                        delete parent.children;
+                    }
+
                 }
             }
             return true;
         });
-        return tree;
     }
     return arrayTreeFilter;
-};
+}
 
 
 //Make it useable in browser as well
