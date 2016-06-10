@@ -1,5 +1,8 @@
 # tree-clean
 
+[![npm version](https://badge.fury.io/js/tree-clean.svg)](https://badge.fury.io/js/tree-clean) [![dependencies](https://david-dm.org/arupex/tree-clean.svg)](http://github.com/arupex/tree-clean) ![Build Status](https://api.travis-ci.org/arupex/tree-clean.svg?branch=master) <a href='https://pledgie.com/campaigns/31873'><img alt='Pledge To Arupex!' src='https://pledgie.com/campaigns/31873.png?skin_name=chrome' border='0' ></a>
+
+
 Install
 
     npm install tree-clean --save
